@@ -1,0 +1,33 @@
+﻿@model List<UsersInRoleViewModel>
+
+@{
+    var roleId = ViewBag.RoleId;
+    var i = 0;
+}
+
+<h1 class="mt-4 mb-4">Edit Users in Role</h1>
+<form method="post">
+    <div class="card">
+        <div class="card-header">
+            <h2>Add or remove users from this role</h2>
+        </div>
+        <div class="card-body">
+            @foreach (var role in Model)
+            { // model won't be passed to the controller unless its a for loop or the inputs are named like it was
+                <div class="form-check m-1">
+                    <input type="hidden" asp-for="@role.UserId" name="@($"[{i}].{nameof(role.UserId)}")" id="@($"z{i}_{nameof(role.UserId)}")" />
+                    <input type="hidden" asp-for="@role.UserName" name="@($"[{i}].{nameof(role.UserName)}")" id="@($"z{i}_{nameof(role.UserName)}")"/>
+                    <label for="@($"z{i}_{nameof(role.IsSelected)}")" class="my-checkbox-container">
+                        <input asp-for="@role.IsSelected" type="checkbox" name="@($"[{i}].{nameof(role.IsSelected)}")" id="@($"z{i++}_{nameof(role.IsSelected)}")">
+                        <span class="my-checkmark"></span>
+                        <span class="my-checkbox-label" style="cursor: pointer">@role.UserName</span>
+                    </label>
+                </div>
+            }
+        </div>
+        <div class="card-footer">
+            <input type="submit" value="Update" class="btn btn-primary" style="width: auto" />
+            <a asp-action="EditRole" asp-route-id="@roleId" class="btn btn-primary" style="width: auto">Cancel</a>
+        </div>
+    </div>
+</form>

@@ -1,0 +1,351 @@
+﻿/* #region GENERAL */
+
+body {
+    background: #202020;
+    color: white;
+}
+
+hr {
+    background: white;
+}
+
+.w-100px {
+    width: 100px;
+}
+
+section {
+    display: flex;
+    flex-flow: column;
+    min-height: 100vh; /* to center content vertically with flex and span across entire viewport height, container = flex: 1 and other elements (header, footer) dont even need flex property */
+}
+
+.page-container {
+    flex: 1;
+    overflow: auto;
+}
+
+.footer {
+    width: 100%;
+    white-space: nowrap;
+    line-height: 60px; /* Vertically center the text there */
+    min-height: 60px;
+}
+
+.no-padding {
+    padding: 0;
+}
+
+/* #endregion */
+
+/* #region CARD */
+
+.card {
+    background: linear-gradient(0.25turn, #303030, #010101);
+    box-shadow: 0 0 6px 2px rgba(0,0,144,1);
+    color: white;
+}
+
+/* #endregion */
+
+/* #region NAVBAR */
+
+.navbar {
+    background: linear-gradient(to bottom, #303030, #010101);
+    box-shadow: 0 0 6px 2px #010101;
+    color: white;
+    border-bottom: none !important;
+}
+
+.navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link {
+    color: white;
+}
+
+    .navbar-dark .navbar-nav .nav-link:hover, .navbar-dark .navbar-nav .nav-link:focus {
+        color: white;
+    }
+
+.nav-item:hover, .nav-item:focus {
+    color: white;
+    text-decoration: none;
+    background: linear-gradient(to bottom, blue, #101010);
+    box-shadow: 0 0 6px 2px blue;
+}
+
+/* #endregion */
+
+/* #region FORM CONTROL */
+
+.form-control {
+    background: linear-gradient(to bottom, #303030, #010101);
+    box-shadow: none;
+    color: white;
+    border: 1px solid #404040;
+}
+
+    .form-control:disabled, .form-control[readonly] {
+        background: linear-gradient(to bottom, #202020, #010101);
+        box-shadow: none;
+        color: #505050;
+        border: 1px solid #303030;
+    }
+
+    .form-control:focus {
+        box-shadow: 0 0 6px 2px blue;
+        color: white;
+    }
+
+/* #endregion */
+
+/* #region SELECT */
+
+.custom-select {
+    background: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' width='4' height='5' viewBox='0 0 4 5'%3e%3cpath fill='%23343aff' d='M2 0L0 2h4zm0 5L0 3h4z'/%3e%3c/svg%3e") no-repeat right 0.75rem center/8px 10px, linear-gradient(to bottom, #303030, #010101);
+    box-shadow: none;
+    color: white;
+    border: 1px solid #404040;
+}
+
+    .custom-select:focus {
+        box-shadow: 0 0 6px 2px blue;
+        color: white;
+    }
+
+    .custom-select option {
+        background: #303030;
+        box-shadow: none;
+        color: white;
+        border: 1px solid #404040;
+    }
+
+.dropdown-menu {
+    background: linear-gradient(to bottom, #303030, #101010);
+    box-shadow: 0 0 6px 2px #505050;
+}
+
+.dropdown-item {
+    color: white;
+}
+
+    .dropdown-item:hover, .dropdown-item:focus {
+        color: white;
+        text-decoration: none;
+        background: linear-gradient(to bottom, blue, #101010);
+        box-shadow: 0 0 6px 2px blue;
+    }
+
+.my-select-options-container {
+    background: linear-gradient(to bottom, #303030, #010101);
+    box-shadow: none;
+    color: white;
+    border: 1px solid #404040;
+    position: absolute;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    border-radius: 0.25rem;
+    z-index: 10;
+}
+
+.my-select-option {
+    display: block;
+    height: calc(1.5em + .75rem + 2px);
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    text-align: left;
+    box-sizing: border-box;
+}
+
+    .my-select-option:hover, .my-select-option:focus, .my-select-option:active {
+        background: linear-gradient(to bottom, #000088, #010101);
+        box-shadow: 0 0 6px 2px blue;
+        cursor: pointer;
+    }
+
+/* #endregion */
+
+/* #region IMAGE */
+
+.image-thumbnail {
+    max-width: 200px;
+    max-height: 200px;
+    width: 200px;
+    height: 200px;
+    margin: 0 auto;
+    object-fit: contain;
+    object-position: center;
+}
+
+/* #endregion */
+
+/* #region CHECKBOX */
+
+.my-checkbox-container {
+    display: flex;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+}
+
+    /* Hide the browser's default checkbox */
+    .my-checkbox-container input {
+        position: absolute;
+        opacity: 0;
+        cursor: pointer;
+        height: 0;
+        width: 0;
+    }
+
+/* Create a custom checkbox */
+.my-checkmark {
+    top: 0;
+    left: 0;
+    height: 25px;
+    width: 25px;
+    background: linear-gradient(to bottom, #303030, #101010);
+    border: 1px solid #404040;
+    border-radius: 0.25rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+    .my-checkmark:hover {
+        box-shadow: 0 0 6px 2px blue;
+    }
+
+/* On mouse-over, add a grey background color */
+.my-checkbox-container:hover input ~ .my-checkmark {
+    background: linear-gradient(to bottom, darkgreen, #101010);
+}
+
+/* When the checkbox is checked, add a background */
+.my-checkbox-container input:checked ~ .my-checkmark {
+    background: linear-gradient(to bottom, yellowgreen, #101010);
+}
+
+/* Create the checkmark/indicator (hidden when not checked) */
+.my-checkmark:after {
+    content: "";
+    display: none;
+}
+
+/* Show the checkmark when checked */
+.my-checkbox-container input:checked ~ .my-checkmark:after {
+    display: block;
+}
+
+/* Style the checkmark/indicator */
+.my-checkbox-container .my-checkmark:after {
+    flex: 0 0 auto;
+    width: 10px;
+    height: 18px;
+    border: solid white;
+    border-width: 0 4px 4px 0;
+    -webkit-transform: rotate(45deg) translate(-2px, -2px);
+    -ms-transform: rotate(45deg) translate(-2px, -2px);
+    transform: rotate(45deg) translate(-2px, -2px);
+}
+
+.my-checkbox-label {
+    margin: 0 0 0 10px;
+}
+
+/* #endregion */
+
+/* #region BUTTON */
+
+.btn-primary {
+    color: #fff;
+    background: linear-gradient(to bottom, #00008B, #010101);
+    border-color: #0000FF;
+}
+
+    .btn-primary:focus, .btn-primary:hover, .btn-primary:active {
+        box-shadow: 0 0 6px 2px #FFFFFF;
+        background: linear-gradient(to bottom, #00008B, #010101);
+        border-color: #FFFFFF;
+        transition: 0.5s;
+    }
+
+.btn-danger {
+    color: #fff;
+    background: linear-gradient(to bottom, #dc3545, #010101);
+    border-color: #ff45a7;
+}
+
+    .btn-danger:focus, .btn-danger:hover, .btn-danger:active {
+        box-shadow: 0 0 6px 2px #FFFFFF;
+        background: linear-gradient(to bottom, #dc3545, #010101);
+        border-color: #FFFFFF;
+        transition: 0.5s;
+    }
+
+/* #endregion */
+
+/* #region ALERT */
+
+.alert-primary {
+    color: white;
+    background: #004000;
+    border: 1px solid #404040;
+    box-shadow: 0 0 6px 2px #008000;
+}
+
+.alert-danger {
+    color: white;
+    background: #AA0000;
+    border: 1px solid #404040;
+    box-shadow: 0 0 6px 2px #e51616;
+}
+
+/* #endregion */
+
+/* #region TABLE */
+
+.my-table, .table {
+    border: 1px solid #404040;
+    box-sizing: border-box;
+    box-shadow: 0 0 6px 2px rgb(0,0,144);
+    width: 100%;
+    color: white;
+}
+
+    .my-table th, .table th {
+        border-top: none;
+        border-right: 1px solid #404040;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, darkblue, #101010);
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 600;
+        line-height: 1.5;
+    }
+
+    .my-table td, .table td {
+        border-top: 1px solid #404040;
+        border-right: 1px solid #404040;
+        box-sizing: border-box;
+        background: linear-gradient(to bottom, #202020, #000000);
+        height: calc(1.5em + .75rem + 2px);
+        padding: .375rem .75rem;
+        font-size: 1rem;
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+        .my-table td:last-child, .my-table th:last-child, .table th:last-child, .table td:last-child {
+            border-right: none;
+        }
+
+    .table thead th {
+        vertical-align: middle;
+        border-bottom: none;
+    }
+
+/* #endregion */

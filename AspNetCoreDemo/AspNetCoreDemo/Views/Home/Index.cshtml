@@ -1,0 +1,33 @@
+﻿@model IEnumerable<Employee>
+
+@{
+    ViewBag.Title = "Employee List";
+}
+
+<div class="card-deck">
+    @foreach (var employee in Model)
+    {
+        var photoPath = $"~/Images/{employee.PhotoPath ?? "noimage.png"}";
+
+        <div class="card m-3" style="min-width: 18rem; max-width: 30.5%">
+            <div class="card-header">
+                <h3>@employee.Name</h3>
+            </div>
+            <img style="margin: 0 auto" class="card-img-top image-thumbnail" src="@photoPath" asp-append-version="true" />
+            <div class="card-footer text-center">
+                <a asp-controller="Home" asp-action="Details" asp-route-id="@employee.EncryptedId" class="btn btn-primary m-1">View</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@employee.Id" class="btn btn-primary m-1">Edit</a>
+                <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@employee.Id">
+                    <span id="confirmDeleteSpan_@employee.Id" style="display:none">
+                        <span>Are you sure you want to delete?</span>
+                        <button type="submit" class="btn btn-danger m-1">Yes</button>
+                        <a href="#" class="btn btn-primary my-confirm-delete m-1" my-unique-id="@employee.Id" my-is-delete-clicked="false">No</a>
+                    </span>
+                    <span id="deleteSpan_@employee.Id">
+                        <a href="#" class="btn btn-danger my-confirm-delete m-1" my-unique-id="@employee.Id" my-is-delete-clicked="true">Delete</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    }
+</div>

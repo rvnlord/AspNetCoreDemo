@@ -1,0 +1,30 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+    <AspNetHostingModel>OutOfProcess</AspNetHostingModel>
+    <UserSecretsId>5cf4296f-5131-4994-ae91-ed4256d64eea</UserSecretsId>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Migrations\20200124163132_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20200124163132_AddPhotoPathColumn.Designer.cs" />
+    <Compile Remove="Migrations\20200124163420_AddSomeproperty.cs" />
+    <Compile Remove="Migrations\20200124163420_AddSomeproperty.Designer.cs" />
+    <Compile Remove="Migrations\20200124164428_AddPhotoPathColumn.cs" />
+    <Compile Remove="Migrations\20200124164428_AddPhotoPathColumn.Designer.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Facebook" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Authentication.Google" Version="3.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="3.1.1" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="3.1.1">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="NLog.Web.AspNetCore" Version="4.9.0" />
+  </ItemGroup>
+
+</Project>

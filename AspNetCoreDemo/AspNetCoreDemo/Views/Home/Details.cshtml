@@ -1,0 +1,39 @@
+﻿@model HomeDetailsViewModel
+
+@{
+    ViewBag.Title = "Employee Details";
+    var photoPath = $"~/Images/{Model.Employee.PhotoPath ?? "noimage.png"}";
+}
+
+<div class="row justify-content-center m-3">
+    <div class="col-sm-8">
+        <div class="card">
+            <div class="card-header">
+                <h1>@Model.Employee.Name</h1>
+            </div>
+
+            <div class="card-body text-center">
+                <img class="card-img-top image-thumbnail" src="@photoPath" asp-append-version="true" />
+
+                <h4 class="mt-4">Employee ID: @Model.Employee.Id</h4>
+                <h4>Email: @Model.Employee.Email</h4>
+                <h4>Department: @Model.Employee.Department</h4>
+
+            </div>
+            <div class="card-footer text-center">
+                <a asp-controller="Home" asp-action="Index" class="btn btn-primary m-1">Back</a>
+                <a asp-controller="Home" asp-action="Edit" asp-route-id="@Model.Employee.Id" class="btn btn-primary m-1">Edit</a>
+                <form method="post" asp-controller="Home" asp-action="Delete" asp-route-id="@Model.Employee.Id">
+                    <span id="confirmDeleteSpan_@Model.Employee.Id" style="display:none">
+                        <span>Are you sure you want to delete?</span>
+                        <button type="submit" class="btn btn-danger m-1">Yes</button>
+                        <a href="#" class="btn btn-primary my-confirm-delete m-1" my-unique-id="@Model.Employee.Id" my-is-delete-clicked="false">No</a>
+                    </span>
+                    <span id="deleteSpan_@Model.Employee.Id">
+                        <a href="#" class="btn btn-danger my-confirm-delete m-1" my-unique-id="@Model.Employee.Id" my-is-delete-clicked="true">Delete</a>
+                    </span>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
