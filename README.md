@@ -31,9 +31,6 @@ The purpose of this project is to present my knowledge of ASP.NET Core to anybod
 
 ![3](/Images/2020-02-23_182427.png?raw=true)
 
-https://github.com/rvnlord/AspNetCoreDemo/blob/master/images/2020-02-23_182718.png
-https://github.com/rvnlord/AspNetCoreDemo/blob/master/Images/2020-02-23_182427.png?raw=true
-
 
 
 
