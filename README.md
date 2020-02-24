@@ -1,6 +1,6 @@
 ## Example ASP.NET Core Employees Management System with user administration capabilities
 
-The purpose of this project is to present my knowledge of ASP.NET Core to anybody who seeks to verify my knowledge
+The purpose of this project is to present my knowledge of ASP.NET Core to anybody who seeks to verify my knowledge. This is one of the solutions I created during the process of learning the technology and will be replaced with a meaningful project as soon as I have something else to share that can be made available for general public.
    
 ### Features:
 
