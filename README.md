@@ -17,7 +17,7 @@ The purpose of this project is to present my knowledge of ASP.NET Core to anybod
 * Global Exception Handling with custom `Error Views` or `Developer Exception Page` depending on requested environment
 * Demonstration of `Models`, `View Models`, `Model Binding` and `Model Validation` (both client and server-side)
 * Demonstration of `Services`, `Dependency Injection` and `Repository Pattern`
-* Demonstration of retaining and discarding data across different requests with `Singleton`, `Scoped` and `Transient Services` as well as differences beetwen the respective approaches
+* Demonstration of retaining and discarding data across different requests with `Singleton`, `Scoped` and `Transient Services` as well as differences between the respective approaches
 * Strongly typed Views with `Bootstrap`
 * Custom client-side scripts in `JavaScript` with `JQuery`
 * Demonstration of temporary data storing mechanisms (`ViewBag`, `ViewData`)
